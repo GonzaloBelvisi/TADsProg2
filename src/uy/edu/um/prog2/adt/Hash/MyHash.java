@@ -8,5 +8,4 @@ public interface MyHash<K,V> {
     boolean isEmpty();
     K KeyListKeys(int spot);
 
-    //Test Commit
 }
