@@ -10,6 +10,8 @@ public class MyStackImpl<T> implements MyStack<T> {
         size = 0;
     }
 
+    //Testeo para muni
+
     @Override
     public boolean isEmpty() {
         return top==null;
