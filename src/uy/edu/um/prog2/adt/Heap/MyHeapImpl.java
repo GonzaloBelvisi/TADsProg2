@@ -42,11 +42,45 @@ public class MyHeapImpl <T extends Comparable<T>> implements MyHeap<T> {
         if (heapSize == 0){
             throw new EmptyHeapException();
         }
-        return null;
+        returnValue = value[0];
+        if (heapSize == 1) {
+            value[0] = null;
+        } else {
+            value[0] = value[heapSize - 1];
+            int position = 0;
+            int childMaxPosition = maxPosition(getLeftChildPosition(position), getRightChildPosition(position));
+            while (value[position].compareTo(value[childMaxPosition]) <0 && position < heapSize && childMaxPosition !=0){
+                T temp = value[position];
+                value[position] = value[childMaxPosition];
+                value[childMaxPosition] = temp;
+                position = childMaxPosition;
+                childMaxPosition = maxPosition(getLeftChildPosition(position), getRightChildPosition(position));
+            }
+            }
+
+        heapSize--;
+        return returnValue;
     }
 
     @Override
     public int size() {
-        return 0;
+        return heapSize;
+    }
+
+    private int maxPosition(int index1, int index2){
+        if (index1 > heapSize && index2 > heapSize){
+            return 0;
+        }
+        if(index1 <= heapSize && index1 > heapSize){
+            return index1;
+        }
+        if (index1 > heapSize && index2 <= heapSize){
+            return index2;
+        }
+        if (value[index1].compareTo(value[index2])>0){
+            return index1;
+        } else {
+            return index2;
+        }
     }
 }

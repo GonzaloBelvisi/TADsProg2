@@ -11,8 +11,6 @@ public class BinarySearchTree<K extends Comparable<K>, T> implements MyBinarySea
         this.root = root;
     }
 
-    //testeo 2
-    // testeo municipio
     @Override
     public T find(K key) {
         return null;
