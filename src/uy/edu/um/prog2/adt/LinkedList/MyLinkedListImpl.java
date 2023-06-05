@@ -1,6 +1,5 @@
 package uy.edu.um.prog2.adt.LinkedList;
 
-import org.w3c.dom.Node;
 
 public class MyLinkedListImpl <T> implements MyLinkedList<T> {
 
